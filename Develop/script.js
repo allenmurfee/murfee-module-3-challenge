@@ -15,6 +15,12 @@ generateBtn.addEventListener("click", writePassword);
 // Generate Password Function
 function generatePassword() {
   var passLength = prompt("How long do you want your password to be? Between 8 and 128 character.");
+
+  var specialCharValues = [" ", "!", "\"", "#", "$", "\%", "\&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
+
+  var lowerCaseValues = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  
+  var upperCaseValues = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   
   if (passLength <= 7 || >= 129) {
     return alert("Must be between 8 and 128 characters."); 
