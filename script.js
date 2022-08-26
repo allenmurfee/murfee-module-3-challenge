@@ -21,36 +21,31 @@ function generatePassword() {
   
   var upperCaseValues = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-  var index = Math.floor(Math.random() * 
+  var numeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-  var passLength = prompt("How long do you want your password to be? Between 8 and 128 character.");
+  // var index = Math.floor(Math.random() * 
+
+
+  // Utilize var name = parseInt(prompt) Google this
+  var passLength = prompt("How long do you want your password to be? It must be between 8 and 128 characters.");
   
   if (passLength <= 7 || passLength >= 129) {
-    return alert("Must be between 8 and 128 characters."); 
+    return alert("ERROR: Must be between 8 and 128 characters."); 
   }
- 
+
   var lowerCase = confirm("Do you want lowercase letters in your password?");
   
-  if (lowerCase) {
-    // need to somehow indicate lowercase letters to be added to password
-  } else if (!lowerCase) {
-    return; 
-  }
-  
   var upperCase = confirm("Do you want uppercase letters in your password?");
-  if (!upperCase) {
-    return; 
-  }
 
   var numeric = confirm("Do you want numbers in your password?");
-  if (!numeric) {
-    return; 
-  }
 
   var specialChar = confirm("Do you want special characters in your password?");
-  if (!specialChar) {
-    return; 
+
+  if (!lowerCase && !upperCase && !numeric && !specialChar) {
+    return alert("ERROR: Must contain at least one value."); 
   }
+
+  
 }
 
 writePassword();
