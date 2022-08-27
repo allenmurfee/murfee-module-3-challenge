@@ -155,11 +155,12 @@ function generatePassword() {
   console.log(passConditions);
 
   if (lowerCase || upperCase || specialChar || numeric) {
+    var generate = " ";
     for (var i = 0; i < passLength; i++) {
       var randomize = passConditions[Math.floor(Math.random() * passLength)];
-      console.log("after randomize");
+      //
+      generate = generate + randomize;
       console.log(generate);
-      var generate = randomize.concat("");
     }
   }
 
