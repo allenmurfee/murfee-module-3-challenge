@@ -112,14 +112,15 @@ function generatePassword() {
 
   var passConditions = [];
 
-  // Utilize var name = parseInt(prompt) Google this
   var passLengthPrompt = prompt(
     "How long do you want your password to be? It must be between 8 and 128 characters.",
     "0"
   );
 
+  // Changes passLengthPrompt to integers
   var passLength = parseInt(passLengthPrompt);
 
+  // Returns error if the password length isn't within the criteria
   if (passLength <= 7 || passLength >= 129) {
     return alert("ERROR: Must be between 8 and 128 characters.");
   }
@@ -132,10 +133,12 @@ function generatePassword() {
 
   var specialChar = confirm("Do you want special characters in your password?");
 
+  // Returns error if the user doesn't select at least one of the 4 criteria above
   if (!lowerCase && !upperCase && !numeric && !specialChar) {
     return alert("ERROR: Must pick at least one value.");
   }
 
+  // These 4 if statements add whatever criteria the user selected into a variable called passConditions
   if (lowerCase) {
     passConditions = lowerCaseValues.concat(passConditions);
   }
@@ -152,15 +155,13 @@ function generatePassword() {
     passConditions = specialCharValues.concat(passConditions);
   }
 
-  console.log(passConditions);
-
+  // This loop randomizes the criteria the user selected as many times as the password length selected. Then, it adds the results into a variable called generate, which is the final password.
   if (lowerCase || upperCase || specialChar || numeric) {
     var generate = " ";
     for (var i = 0; i < passLength; i++) {
       var randomize = passConditions[Math.floor(Math.random() * passLength)];
       //
       generate = generate + randomize;
-      console.log(generate);
     }
   }
 
