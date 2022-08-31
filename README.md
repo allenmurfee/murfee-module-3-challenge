@@ -12,7 +12,9 @@ No installation is required.
 
 ## Usage
 
-To use this application, simply visit this URL and click on the "generate" button: 
+To use this application, simply visit this URL and click on the "generate" button: https://allenmurfee.github.io/random-password-generator/
+
+![password generator website](assets/screenshot.png)
 
 ## Credits
 
