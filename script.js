@@ -15,7 +15,6 @@ generateBtn.addEventListener("click", writePassword);
 // Generate Password Function
 function generatePassword() {
   var specialCharValues = [
-    " ",
     "!",
     '"',
     "#",
@@ -111,6 +110,7 @@ function generatePassword() {
   var numericValues = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
   var passConditions = [];
+  console.log(passConditions);
 
   var passLengthPrompt = prompt(
     "How long do you want your password to be? It must be between 8 and 128 characters.",
@@ -159,10 +159,14 @@ function generatePassword() {
   if (lowerCase || upperCase || specialChar || numeric) {
     var generate = " ";
     for (var i = 0; i < passLength; i++) {
-      var randomize = passConditions[Math.floor(Math.random() * passLength)];
+      var randomize =
+        passConditions[Math.floor(Math.random() * passConditions.length)];
+      console.log(i);
       //
-      generate = generate + randomize; 
+      generate = generate + randomize;
     }
+    console.log(randomize);
+    console.log(passConditions);
   }
 
   return generate;
