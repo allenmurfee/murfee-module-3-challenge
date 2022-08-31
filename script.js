@@ -148,7 +148,7 @@ function generatePassword() {
   }
 
   if (numeric) {
-    passConditions = numericValues.concat(passConditions);
+    passConditions = passConditions.concat(numericValues);
   }
 
   if (specialChar) {
@@ -161,7 +161,7 @@ function generatePassword() {
     for (var i = 0; i < passLength; i++) {
       var randomize = passConditions[Math.floor(Math.random() * passLength)];
       //
-      generate = generate + randomize;
+      generate = generate + randomize; 
     }
   }
 
